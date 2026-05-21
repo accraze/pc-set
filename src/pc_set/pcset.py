@@ -332,3 +332,37 @@ class PCSet:
             return False  # Same set class
         
         return self.interval_vector() == other.interval_vector()
+
+    def common_name(self) -> Optional[str]:
+        """
+        Get the common musical name for this set.
+        
+        Returns:
+            Common name if known (e.g., "Major Triad"), None otherwise.
+        
+        Example:
+            >>> PCSet([0, 4, 7]).common_name()
+            'Major Triad'
+        """
+        from .common_sets import get_by_prime_form
+        prime = self.prime_form()
+        result = get_by_prime_form(prime)
+        if result:
+            _, info = result
+            return info["name"]
+        return None
+    
+    def description(self) -> Optional[str]:
+        """
+        Get the description for this set.
+        
+        Returns:
+            Description if known, None otherwise.
+        """
+        from .common_sets import get_by_prime_form
+        prime = self.prime_form()
+        result = get_by_prime_form(prime)
+        if result:
+            _, info = result
+            return info["description"]
+        return None

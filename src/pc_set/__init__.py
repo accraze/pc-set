@@ -12,11 +12,41 @@ Basic usage:
     (0, 3, 7)
     >>> print(s.forte_number())
     3-11
+    >>> print(s.common_name())
+    'Major Triad'
 """
 
 __version__ = "0.1.0"
 __author__ = "Andy Craze"
 
 from .pcset import PCSet
+from .common_sets import (
+    get_common_set,
+    get_set_by_name,
+    search_by_name,
+    get_z_partners,
+    is_z_related,
+    get_all_z_pairs,
+    get_by_cardinality,
+)
+from .search import analyze, compare_sets, find_similar_to, find_z_pairs_by_cardinality
 
-__all__ = ["PCSet"]
+__all__ = [
+    # Core class
+    "PCSet",
+    
+    # Common sets lookup
+    "get_common_set",
+    "get_set_by_name",
+    "search_by_name",
+    "get_z_partners",
+    "is_z_related",
+    "get_all_z_pairs",
+    "get_by_cardinality",
+    
+    # Analysis tools
+    "analyze",
+    "compare_sets",
+    "find_similar_to",
+    "find_z_pairs_by_cardinality",
+]
