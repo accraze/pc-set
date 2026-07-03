@@ -16,7 +16,7 @@ Basic usage:
     'Major Triad'
 """
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __author__ = "Andy Craze"
 
 from .pcset import PCSet
