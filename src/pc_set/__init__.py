@@ -16,7 +16,7 @@ Basic usage:
     'Major Triad'
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Andy Craze"
 
 from .pcset import PCSet
@@ -31,6 +31,8 @@ from .common_sets import (
 )
 from .search import analyze, compare_sets, find_similar_to, find_z_pairs_by_cardinality
 
+from .audio import TrackAnalysis, HarmonicMoment, analyze_audio, batch_analyze
+from .catalog import CatalogAnalyzer, CatalogInsights, CatalogPattern
 __all__ = [
     # Core class
     "PCSet",
@@ -49,4 +51,15 @@ __all__ = [
     "compare_sets",
     "find_similar_to",
     "find_z_pairs_by_cardinality",
+    
+    # Audio analysis
+    "TrackAnalysis",
+    "HarmonicMoment",
+    "analyze_audio",
+    "batch_analyze",
+    
+    # Catalog analysis
+    "CatalogAnalyzer",
+    "CatalogInsights",
+    "CatalogPattern",
 ]
